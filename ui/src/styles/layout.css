@@ -1,0 +1,24 @@
+/* App shell: a fixed-height page where only the transcript and the sidebar scroll. */
+html, body, #root { height: 100%; }
+.app-page { --pf-v6-c-page__sidebar--Width: 24rem; }
+.app-page .pf-v6-c-page__main-container { overflow: hidden; align-self: stretch; min-height: 0; }
+.app-page .pf-v6-c-page__main { min-height: 0; overflow: hidden; }
+.chat-section { display: flex; flex-direction: column; min-height: 0; height: 100%; }
+.column { max-width: 54rem; margin: 0 auto; width: 100%; }
+
+.mcp-pill { display: inline-block; }
+.mcp-pill .pf-v6-c-label { cursor: pointer; }
+.tools-head { font-size: var(--pf-t--global--font--size--sm); color: var(--pf-t--global--text--color--subtle); margin-bottom: var(--pf-t--global--spacer--xs); }
+/* 10 rows of 2rem; more rows scroll. */
+.tools-list { list-style: none; margin: 0; padding: 0; max-height: 20rem; overflow-y: auto; min-width: min(28rem, 85vw); }
+.tools-list li { display: flex; align-items: center; gap: var(--pf-t--global--spacer--sm); height: 2rem; border-bottom: var(--pf-t--global--border--width--regular) solid var(--pf-t--global--border--color--default); }
+.tools-list li:last-child { border-bottom: 0; }
+.tools-list code { flex: none; color: var(--pf-t--global--text--color--link--default); }
+.tools-desc { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--pf-t--global--text--color--subtle); }
+
+/* Narrow screens: let the header wrap instead of scrolling the page sideways. */
+@media (max-width: 48rem) {
+  .app-page .pf-v6-c-masthead { flex-wrap: wrap; height: auto; }
+  .app-page .pf-v6-c-masthead__content { flex-basis: 100%; min-width: 0; }
+  #header-toolbar .pf-v6-c-toolbar__content-section { flex-wrap: wrap; }
+}

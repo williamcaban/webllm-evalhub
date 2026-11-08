@@ -1,0 +1,35 @@
+.transcript { flex: 1; min-height: 0; overflow-y: auto; padding: var(--pf-t--global--spacer--md); }
+.transcript .column { display: flex; flex-direction: column; gap: var(--pf-t--global--spacer--md); }
+
+.msg-who { text-transform: uppercase; letter-spacing: .06em; color: var(--pf-t--global--text--color--subtle); display: block; margin-bottom: var(--pf-t--global--spacer--xs); }
+.msg-user { background: var(--pf-t--global--background--color--secondary--default); margin-left: 10%; }
+.msg-user-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+.msg-assistant .markdown { overflow-wrap: anywhere; }
+.msg-pending { display: flex; align-items: center; gap: var(--pf-t--global--spacer--sm); color: var(--pf-t--global--text--color--subtle); }
+.msg-note .pf-v6-c-alert__title, .msg-error-text { overflow-wrap: anywhere; white-space: pre-wrap; }
+.markdown-table { overflow-x: auto; margin-block: var(--pf-t--global--spacer--sm); }
+
+.reasoning { margin-bottom: var(--pf-t--global--spacer--sm); }
+.reasoning-live { border-left: var(--pf-t--global--border--width--strong) solid var(--pf-t--global--border--color--clicked); padding-left: var(--pf-t--global--spacer--sm); }
+.reasoning-toggle, .tool-toggle { display: inline-flex; align-items: center; gap: var(--pf-t--global--spacer--sm); }
+.reasoning-text { margin: 0; padding: var(--pf-t--global--spacer--sm); max-height: 16rem; overflow: auto; white-space: pre-wrap; word-break: break-word; font: var(--pf-t--global--font--size--sm)/1.5 var(--pf-t--global--font--family--mono); color: var(--pf-t--global--text--color--subtle); }
+
+.tool-card-live { border-color: var(--pf-t--global--border--color--clicked); }
+.tool-name { color: var(--pf-t--global--text--color--link--default); }
+.tool-pre pre { max-height: 16rem; overflow: auto; white-space: pre-wrap; word-break: break-word; }
+.approve-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--pf-t--global--spacer--sm); margin-block: var(--pf-t--global--spacer--md); }
+.collection-preview { margin-top: var(--pf-t--global--spacer--md); }
+
+.composer { border-top: var(--pf-t--global--border--width--regular) solid var(--pf-t--global--border--color--default); padding: var(--pf-t--global--spacer--md); background: var(--pf-t--global--background--color--secondary--default); }
+.composer .column { display: flex; flex-direction: column; gap: var(--pf-t--global--spacer--sm); }
+.composer-row { display: flex; gap: var(--pf-t--global--spacer--sm); align-items: flex-end; }
+.composer-row .pf-v6-c-form-control { flex: 1; }
+.examples { display: flex; flex-wrap: wrap; gap: var(--pf-t--global--spacer--xs); }
+.examples .pf-v6-c-label { cursor: pointer; }
+.activity-time { margin-left: var(--pf-t--global--spacer--sm); color: var(--pf-t--global--text--color--subtle); font-variant-numeric: tabular-nums; }
+
+@media (max-width: 48rem) { .msg-user { margin-left: 0; } }
+
+/* Math is MathML, so it inherits the page font. Display formulas sit on their own line and scroll rather than overflow. */
+.math-display { display: block; text-align: center; overflow-x: auto; margin-block: var(--pf-t--global--spacer--sm); }
+.math math { font-size: 1.1em; }

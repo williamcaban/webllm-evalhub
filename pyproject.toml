@@ -1,0 +1,19 @@
+[project]
+name = "webllm-evalhub"
+version = "0.1.0"
+description = "Chat UI for the EvalHub MCP design_collection skill, with a local credential-holding proxy"
+readme = "README.md"
+authors = [
+    { name = "William Caban", email = "william.caban@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "eval-hub-sdk[cli]>=1.0.7",
+]
+
+[project.scripts]
+webllm-evalhub = "webllm_evalhub:main"
+
+[build-system]
+requires = ["uv_build>=0.12.17,<0.13.0"]
+build-backend = "uv_build"
